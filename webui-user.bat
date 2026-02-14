@@ -1,9 +1,13 @@
 @echo off
 
-set PYTHON=
+set PYTHON=C:\Users\Administrator\AppData\Local\Programs\Python\Python310\python.exe
 set GIT=
 set VENV_DIR=
-set COMMANDLINE_ARGS=
+set COMMANDLINE_ARGS=--autolaunch
+
+rem Fix for setuptools compatibility
+echo Checking environment compatibility...
+"%PYTHON%" -m pip install "setuptools==69.5.1" 2>nul
 
 @REM Uncomment following code to reference an existing A1111 checkout.
 @REM set A1111_HOME=Your A1111 checkout dir
